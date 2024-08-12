@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlunosComponent implements OnInit {
   public title = 'Alunos';
+  public alunoSelected!: string;
 
   alunos = [
     { id: 1, nome: 'Giulia', sobrenome: 'Soares', telefone: 12341234 },
@@ -17,7 +18,17 @@ export class AlunosComponent implements OnInit {
     { id: 6, nome: 'Edilio', sobrenome: 'Pereira', telefone: 78900987 },
   ];
 
-  constructor() {}
+  alunoSelect(aluno: any){
+    this.alunoSelected = aluno.nome;
+  }
+
+  voltar(){
+    this.alunoSelected = '';
+  }
+
+  constructor() {
+   
+  }
 
   ngOnInit() {}
 }
